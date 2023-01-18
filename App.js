@@ -5,7 +5,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import CameraScreen from './app/assets/Screen/camera';
 
 
-
+#Initial_code_for_first_screen
+#Currently_this_screen_is_not_being_used
 const myApp = () => {
   return (
     <View
@@ -25,6 +26,7 @@ const myApp = () => {
     
   );
 };
+
 const Stack = createNativeStackNavigator();
 
 const MyStack = () => {
