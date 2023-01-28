@@ -1,31 +1,8 @@
-import * as React from 'react';
-import {Button, DrawerLayoutAndroidComponent, Text, View} from 'react-native';
+import React, {useEffect, useRef} from 'react';
+import {Button, DrawerLayoutAndroidComponent, Text, View, StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import CameraScreen from './app/assets/Screen/camera';
-
-
-#Initial_code_for_first_screen
-#Currently_this_screen_is_not_being_used
-const myApp = () => {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-      <Text style={{ fontSize: 25 }}> Welcome to our </Text>
-      <Text style={{ fontSize: 30, textAlign: 'center' }}> Face Emotion Detection</Text>
-      <Text style={{ fontSize: 25 }}> App! </Text>
-      <Button
-        title="Go to Camera->"
-        color="#808080" />
-
-    </View>
-    
-  );
-};
+import CameraScreen from './screens/camera';
 
 const Stack = createNativeStackNavigator();
 
@@ -36,31 +13,52 @@ const MyStack = () => {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{title: 'Welcome to Face Emotion Detection App!', textAlign: "center", alignItems: "center"}}
+          options={{title: 'Welcome'}}
         />
         <Stack.Screen 
           name="Camera" 
-          component={CameraScreen} 
+          component={CameraScreen}
+          options={{title: 'Emotion detector'}} 
         />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
+
 const HomeScreen = ({navigation}) => {
   return (
-    <Button
-      title="Go to Camera->"
-      onPress={() =>
-        navigation.navigate('CameraS')
-      }
+    <View style={styles.container}>
+      <Text style={styles.text}>Welcome to emotion recognition App</Text>
+      <Button
+        style={styles.button}
+        title="Open Camera"
+        onPress={() =>
+          navigation.navigate('Camera')
+        }
     />
+    </View>
   );
 };
-const CameraS = ({navigation}) => {
+const MainScreen = ({navigation}) => {
   return (
     <CameraScreen />
   );
 };
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  button: {
+    alignSelf: 'flex-end',
+    alignItems: 'center'
+  },
+  text: {
+    fontSize: 20,
+    margin: 10,
+  }
+})
 
 export default MyStack;
