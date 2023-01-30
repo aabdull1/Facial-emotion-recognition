@@ -2,7 +2,7 @@ import React, {useEffect, useRef} from 'react';
 import {Button, DrawerLayoutAndroidComponent, Text, View, StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import CameraScreen from './screens/Camera';
+import CameraScreen from './app/assets/screens/Camera';
 
 const Stack = createNativeStackNavigator();
 
