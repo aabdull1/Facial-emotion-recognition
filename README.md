@@ -30,6 +30,7 @@ npm expo install
 ```
 npm expo start
 ```
-The terminal prints a QR code.
+The terminal prints a QR code.  
+
 5. On your android device, install the Expo Go client from the Google Play Store. After installation, open the app and scan the QR code.
 6. If everything goes well, the app should be loaded.
